@@ -1,68 +1,226 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
 
 <head>
 
-<title>Soluzione per squadre in cantiere</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Soluzione Attrezzature - LEMON Sistemi</title>
 
 <style>
 
 body{
 font-family:Arial;
-background:#f4f4f4;
-padding:40px;
+margin:0;
+background:#f3f4f6;
+color:#333;
 }
 
-.box{
-background:white;
-padding:30px;
-border-radius:10px;
-max-width:800px;
+header{
+background:#111827;
+color:white;
+padding:60px;
+text-align:center;
+}
+
+header h1{
+margin:0;
+font-size:40px;
+}
+
+header p{
+font-size:18px;
+margin-top:10px;
+opacity:0.9;
+}
+
+section{
+max-width:1000px;
 margin:auto;
+background:white;
+padding:40px;
+margin-top:30px;
+border-radius:10px;
+box-shadow:0 10px 20px rgba(0,0,0,0.08);
 }
 
-h1{
-color:#111;
+h2{
+margin-top:0;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+margin-top:20px;
+}
+
+.card{
+background:#f9fafb;
+padding:25px;
+border-radius:8px;
+}
+
+.highlight{
+background:#ecfdf5;
+padding:25px;
+border-radius:8px;
+font-size:20px;
+font-weight:bold;
+color:#047857;
+margin-top:20px;
+}
+
+.sim{
+background:#f1f5f9;
+padding:25px;
+border-radius:8px;
+margin-top:20px;
+}
+
+input{
+padding:10px;
+font-size:16px;
+width:100px;
+}
+
+button{
+padding:10px 20px;
+font-size:16px;
+background:#2563eb;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+.result{
+margin-top:20px;
+font-size:22px;
+font-weight:bold;
+color:#15803d;
+}
+
+footer{
+text-align:center;
+padding:30px;
+color:#777;
 }
 
 </style>
+
+<script>
+
+function calcola(){
+
+let minuti = document.getElementById("minuti").value;
+
+let operai = 3;
+
+let giorni = 22;
+
+let ore = (minuti/60)*operai*giorni;
+
+document.getElementById("risultato").innerHTML =
+"Hai recuperato circa " + ore.toFixed(1) + " ore di lavoro al mese.";
+
+}
+
+</script>
 
 </head>
 
 <body>
 
-<div class="box">
+<header>
 
-<h1>Soluzione proposta da LEMON Sistemi</h1>
+<h1>LEMON Sistemi</h1>
 
-<p>
-Sistema di attrezzature professionali pensato per migliorare
-la produttività delle squadre in cantiere.
-</p>
+<p>Soluzione per migliorare la produttività delle squadre in cantiere</p>
 
-<h2>Squadra tipo</h2>
+</header>
 
-<ul>
-<li>Operaio 1 → forature e tasselli</li>
-<li>Operaio 2 → avvitature</li>
-<li>Operaio 3 → tagli e smerigliatrice</li>
-</ul>
+<section>
 
-<h2>Il problema</h2>
+<h2>Come lavora una squadra in cantiere</h2>
 
-<p>
-Quando gli operatori devono aspettare un utensile
-o una batteria la produttività della squadra cala.
-</p>
+<div class="grid">
 
-<h2>Il vantaggio</h2>
+<div class="card">
+<h3>Operatore 1</h3>
+<p>Forature e tassellature</p>
+</div>
 
-<p>
-Con attrezzatura organizzata ogni operatore
-può lavorare contemporaneamente senza fermarsi.
-</p>
+<div class="card">
+<h3>Operatore 2</h3>
+<p>Avvitature e fissaggi</p>
+</div>
+
+<div class="card">
+<h3>Operatore 3</h3>
+<p>Tagli e lavorazioni con smerigliatrice</p>
+</div>
 
 </div>
+
+</section>
+
+<section>
+
+<h2>Il problema più comune</h2>
+
+<p>
+Quando gli operatori devono aspettare un utensile o una batteria,
+la produttività della squadra diminuisce.
+</p>
+
+<div class="highlight">
+
+Il costo più grande in cantiere è il tempo della squadra.
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Soluzione proposta da LEMON Sistemi</h2>
+
+<ul>
+
+<li>Attrezzature professionali <strong>Milwaukee</strong></li>
+<li>Utensili disponibili per ogni lavorazione</li>
+<li>Batterie sempre pronte</li>
+<li>Nessuna attesa tra operatori</li>
+
+</ul>
+
+</section>
+
+<section>
+
+<h2>Simulazione tempo recuperato</h2>
+
+<div class="sim">
+
+<p>Quanti minuti si possono risparmiare ogni ora?</p>
+
+<input id="minuti" type="number" value="10">
+
+<button onclick="calcola()">Calcola</button>
+
+<div id="risultato" class="result"></div>
+
+</div>
+
+</section>
+
+<footer>
+
+Soluzione proposta da LEMON Sistemi
+
+</footer>
 
 </body>
 
