@@ -2,16 +2,7 @@
 <html lang="it">
 
 <head>
-<body>
 
-<h1>Proposta Milwaukee</h1>
-
-<p>
-All'inizio della collaborazione, Milwaukee contribuirà all’estinzione del noleggio attualmente in essere con Hilti con un importo indicativo di circa 12.000 €.
-<br><br>
-Inoltre verranno riconosciuti bonus di produzione pari al 10% del fatturato, suddivisi per tipologia di prodotto/attrezzatura. 
-Tali bonus potranno essere utilizzati liberamente dall’azienda secondo le proprie necessità.
-</p>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -20,7 +11,7 @@ Tali bonus potranno essere utilizzati liberamente dall’azienda secondo le prop
 <style>
 
 body{
-font-family:Arial;
+font-family:Arial, sans-serif;
 margin:0;
 background:#f3f4f6;
 color:#333;
@@ -91,7 +82,7 @@ margin-top:20px;
 input{
 padding:10px;
 font-size:16px;
-width:100px;
+width:120px;
 }
 
 button{
@@ -102,6 +93,10 @@ color:white;
 border:none;
 border-radius:6px;
 cursor:pointer;
+}
+
+button:hover{
+background:#1d4ed8;
 }
 
 .result{
@@ -123,16 +118,22 @@ color:#777;
 
 function calcola(){
 
-let minuti = document.getElementById("minuti").value;
+let minuti = parseFloat(document.getElementById("minuti").value);
 
 let operai = 3;
 
-let giorni = 22;
+let ore_giornaliere = 8;
+let giorni_settimana = 5;
+let settimane_mese = 4;
 
-let ore = (minuti/60)*operai*giorni;
+let ore_totali_mese = ore_giornaliere * giorni_settimana * settimane_mese;
+
+let tempo_perso = minuti / 60;
+
+let ore_recuperate = tempo_perso * ore_totali_mese * operai;
 
 document.getElementById("risultato").innerHTML =
-"Hai recuperato circa " + ore.toFixed(1) + " ore di lavoro al mese.";
+"Hai recuperato circa " + ore_recuperate.toFixed(1) + " ore di lavoro al mese.";
 
 }
 
@@ -149,6 +150,25 @@ document.getElementById("risultato").innerHTML =
 <p>Soluzione per migliorare la produttività delle squadre in cantiere</p>
 
 </header>
+
+<section>
+
+<h2>Condizioni iniziali della proposta</h2>
+
+<p>
+All’inizio della collaborazione, <strong>Milwaukee contribuirà all’estinzione del noleggio attualmente in essere con Hilti</strong> 
+con un importo indicativo di circa <strong>12.000 €</strong>.
+</p>
+
+<p>
+Inoltre verranno riconosciuti <strong>bonus di produzione pari al 10% del fatturato</strong>, suddivisi per tipologia di prodotto.
+</p>
+
+<p>
+Tali bonus potranno essere <strong>utilizzati liberamente</strong> per nuove attrezzature, batterie o altre necessità operative.
+</p>
+
+</section>
 
 <section>
 
@@ -194,7 +214,7 @@ Il costo più grande in cantiere è il tempo della squadra.
 
 <section>
 
-<h2>Soluzione proposta da LEMON Sistemi</h2>
+<h2>Soluzione proposta</h2>
 
 <ul>
 
@@ -213,7 +233,7 @@ Il costo più grande in cantiere è il tempo della squadra.
 
 <div class="sim">
 
-<p>Quanti minuti si possono risparmiare ogni ora?</p>
+<p>Quanti minuti si perdono ogni ora in attese di utensili o batterie?</p>
 
 <input id="minuti" type="number" value="10">
 
