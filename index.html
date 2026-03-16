@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Soluzione Attrezzature - LEMON Sistemi</title>
+<title>Soluzione Attrezzature - LEMON SISTEMI</title>
 
 <style>
 
@@ -128,12 +128,12 @@ let settimane_mese = 4;
 
 let ore_totali_mese = ore_giornaliere * giorni_settimana * settimane_mese;
 
-let tempo_perso = minuti / 60;
+let tempo_perso_ora = minuti / 60;
 
-let ore_recuperate = tempo_perso * ore_totali_mese * operai;
+let ore_recuperate = tempo_perso_ora * ore_totali_mese * operai;
 
 document.getElementById("risultato").innerHTML =
-"Hai recuperato circa " + ore_recuperate.toFixed(1) + " ore di lavoro al mese.";
+"Hai recuperato circa <strong>" + ore_recuperate.toFixed(1) + " ore di lavoro al mese</strong>.";
 
 }
 
@@ -150,25 +150,6 @@ document.getElementById("risultato").innerHTML =
 <p>Soluzione per migliorare la produttività delle squadre in cantiere</p>
 
 </header>
-
-<section>
-
-<h2>Condizioni iniziali della proposta</h2>
-
-<p>
-All’inizio della collaborazione, <strong>Milwaukee contribuirà all’estinzione del noleggio attualmente in essere con Hilti</strong> 
-con un importo indicativo di circa <strong>12.000 €</strong>.
-</p>
-
-<p>
-Inoltre verranno riconosciuti <strong>bonus di produzione pari al 10% del fatturato</strong>, suddivisi per tipologia di prodotto.
-</p>
-
-<p>
-Tali bonus potranno essere <strong>utilizzati liberamente</strong> per nuove attrezzature, batterie o altre necessità operative.
-</p>
-
-</section>
 
 <section>
 
@@ -205,9 +186,7 @@ la produttività della squadra diminuisce.
 </p>
 
 <div class="highlight">
-
 Il costo più grande in cantiere è il tempo della squadra.
-
 </div>
 
 </section>
@@ -242,6 +221,27 @@ Il costo più grande in cantiere è il tempo della squadra.
 <div id="risultato" class="result"></div>
 
 </div>
+
+</section>
+
+<section>
+
+<h2>Condizioni della proposta Milwaukee</h2>
+
+<p>
+Milwaukee contribuirà all’estinzione del noleggio attualmente in essere con Hilti
+con un importo indicativo di circa <strong>12.000 €</strong>.
+</p>
+
+<p>
+Inoltre verranno riconosciuti <strong>bonus di produzione pari al 10% del fatturato</strong>,
+suddivisi per tipologia di prodotto.
+</p>
+
+<p>
+Tali bonus potranno essere utilizzati liberamente per nuove attrezzature,
+batterie o altre necessità operative.
+</p>
 
 </section>
 
