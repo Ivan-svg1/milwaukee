@@ -211,8 +211,6 @@ function calcola(){
 
 let minuti = parseFloat(document.getElementById("minuti").value);
 
-let operai = 3;
-
 let ore_giornaliere = 8;
 let giorni_settimana = 5;
 let settimane_mese = 4;
@@ -221,10 +219,10 @@ let ore_totali_mese = ore_giornaliere * giorni_settimana * settimane_mese;
 
 let tempo_perso = minuti / 60;
 
-let ore_recuperate = tempo_perso * ore_totali_mese * operai;
+let ore_recuperate = tempo_perso * ore_totali_mese;
 
 document.getElementById("risultato").innerHTML =
-"Si recuperano circa <strong>" + ore_recuperate.toFixed(1) + " ore di lavoro al mese</strong>";
+"Si recuperano circa <strong>" + ore_recuperate.toFixed(1) + " ore di lavoro della squadra al mese</strong>";
 
 }
 
