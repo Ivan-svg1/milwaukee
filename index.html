@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Soluzione Attrezzature - LEMON SISTEMI</title>
+<title>Proposta Attrezzature - LEMON SISTEMI</title>
 
 <style>
 
@@ -18,19 +18,19 @@ color:#333;
 }
 
 header{
-background:#111827;
+background:linear-gradient(135deg,#111827,#1f2937);
 color:white;
-padding:60px;
+padding:70px;
 text-align:center;
 }
 
 header h1{
 margin:0;
-font-size:40px;
+font-size:42px;
 }
 
 header p{
-font-size:18px;
+font-size:20px;
 margin-top:10px;
 opacity:0.9;
 }
@@ -41,8 +41,8 @@ margin:auto;
 background:white;
 padding:40px;
 margin-top:30px;
-border-radius:10px;
-box-shadow:0 10px 20px rgba(0,0,0,0.08);
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
 }
 
 h2{
@@ -59,13 +59,13 @@ margin-top:20px;
 .card{
 background:#f9fafb;
 padding:25px;
-border-radius:8px;
+border-radius:10px;
 }
 
 .highlight{
 background:#ecfdf5;
 padding:25px;
-border-radius:8px;
+border-radius:10px;
 font-size:20px;
 font-weight:bold;
 color:#047857;
@@ -75,8 +75,33 @@ margin-top:20px;
 .sim{
 background:#f1f5f9;
 padding:25px;
-border-radius:8px;
+border-radius:10px;
 margin-top:20px;
+}
+
+.compare{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+margin-top:20px;
+}
+
+.hilti{
+background:#fee2e2;
+padding:25px;
+border-radius:10px;
+}
+
+.milwaukee{
+background:#dcfce7;
+padding:25px;
+border-radius:10px;
+}
+
+.price{
+font-size:28px;
+font-weight:bold;
+margin-top:10px;
 }
 
 input{
@@ -128,12 +153,12 @@ let settimane_mese = 4;
 
 let ore_totali_mese = ore_giornaliere * giorni_settimana * settimane_mese;
 
-let tempo_perso_ora = minuti / 60;
+let tempo_perso = minuti / 60;
 
-let ore_recuperate = tempo_perso_ora * ore_totali_mese * operai;
+let ore_recuperate = tempo_perso * ore_totali_mese * operai;
 
 document.getElementById("risultato").innerHTML =
-"Hai recuperato circa <strong>" + ore_recuperate.toFixed(1) + " ore di lavoro al mese</strong>.";
+"Si recuperano circa <strong>" + ore_recuperate.toFixed(1) + " ore di lavoro al mese</strong>.";
 
 }
 
@@ -147,7 +172,7 @@ document.getElementById("risultato").innerHTML =
 
 <h1>LEMON Sistemi</h1>
 
-<p>Soluzione per migliorare la produttività delle squadre in cantiere</p>
+<p>Proposta per migliorare la produttività delle squadre in cantiere</p>
 
 </header>
 
@@ -193,16 +218,71 @@ Il costo più grande in cantiere è il tempo della squadra.
 
 <section>
 
-<h2>Soluzione proposta</h2>
+<h2>Confronto situazione attuale</h2>
+
+<div class="compare">
+
+<div class="hilti">
+
+<h3>Situazione attuale - Hilti</h3>
+
+<p>
+Attualmente paghiamo circa:
+</p>
+
+<div class="price">
+900 € / mese
+</div>
+
+<p>
+Per <strong>4 kit</strong> con:
+</p>
 
 <ul>
-
-<li>Attrezzature professionali <strong>Milwaukee</strong></li>
-<li>Utensili disponibili per ogni lavorazione</li>
-<li>Batterie sempre pronte</li>
-<li>Nessuna attesa tra operatori</li>
-
+<li>Trapano</li>
+<li>Avvitatore</li>
+<li>Smerigliatrice</li>
+<li>Alcuni attrezzi accessori</li>
 </ul>
+
+<p>
+Molti attrezzi non sono necessari e
+<strong>non possono essere restituiti</strong>.
+</p>
+
+</div>
+
+<div class="milwaukee">
+
+<h3>Proposta Milwaukee</h3>
+
+<p>
+Costo indicativo:
+</p>
+
+<div class="price">
+1400 € / mese
+</div>
+
+<p>
+Per <strong>11 kit completi</strong> con:
+</p>
+
+<ul>
+<li>Trapano</li>
+<li>Avvitatore</li>
+<li>Avvitatore a impulsi</li>
+<li>Smerigliatrice</li>
+<li>Molti altri utensili utili in cantiere</li>
+</ul>
+
+<p>
+<strong>Senza anticipo iniziale.</strong>
+</p>
+
+</div>
+
+</div>
 
 </section>
 
@@ -212,7 +292,7 @@ Il costo più grande in cantiere è il tempo della squadra.
 
 <div class="sim">
 
-<p>Quanti minuti si perdono ogni ora in attese di utensili o batterie?</p>
+<p>Quanti minuti si perdono ogni ora aspettando utensili o batterie?</p>
 
 <input id="minuti" type="number" value="10">
 
@@ -234,7 +314,8 @@ con un importo indicativo di circa <strong>12.000 €</strong>.
 </p>
 
 <p>
-Inoltre verranno riconosciuti <strong>bonus di produzione pari al 10% del fatturato</strong>,
+Inoltre verranno riconosciuti
+<strong>bonus di produzione pari al 10% del fatturato</strong>,
 suddivisi per tipologia di prodotto.
 </p>
 
@@ -247,7 +328,7 @@ batterie o altre necessità operative.
 
 <footer>
 
-Soluzione proposta da LEMON SISTEMI
+Proposta preparata da LEMON SISTEMI
 
 </footer>
 
